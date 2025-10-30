@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rifki & Suci 💕</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffc0cb, #ffb6f0, #fce4ec);
+    color: #4a004e;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  h1 {
+    margin-top: 40px;
+    font-size: 2.5em;
+    color: #d63384;
+    animation: fadeIn 2s ease-in-out;
+  }
+  h2 {
+    font-weight: 400;
+    color: #5e005e;
+    animation: fadeIn 3s ease-in-out;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  .gallery img, .gallery video {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInUp 1s forwards;
+  }
+  .gallery img:nth-child(1) { animation-delay: 0.5s; }
+  .gallery img:nth-child(2) { animation-delay: 1s; }
+  .gallery img:nth-child(3) { animation-delay: 1.5s; }
+  .gallery img:nth-child(4) { animation-delay: 2s; }
+  .gallery video { animation-delay: 2.5s; }
+  .meta {
+    font-size: 1.1em;
+    margin-top: 20px;
+  }
+  /* popup */
+  .overlay {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.6);
+    display:none;
+    align-items:center;
+    justify-content:center;
+  }
+  .popup {
+    background: #fff0f6;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 300px;
+    box-shadow: 0 0 15px rgba(255,192,203,0.8);
+    animation: pop 0.8s ease;
+  }
+  .btn {
+    margin-top: 15px;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;} to {opacity: 1;}
+  }
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes pop {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+  }
+  /* love animation */
+  .heart {
+    position: fixed;
+    top: -10px;
+    color: #ff80bf;
+    animation: fall 6s linear infinite;
+    font-size: 20px;
+  }
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<h1>💖 Rifki & Suci 💖</h1>
+<h2>Kenangan indah yang tak akan terlupakan — 20 Juli 2022 ✨</h2>
+
+<div class="gallery">
+  <img src="MediaWeb/IMG-20240427-WA0013.jpg" alt="Foto 1">
+  <img src="MediaWeb/IMG-20250406-WA0015.jpg" alt="Foto 2">
+  <img src="MediaWeb/IMG-20250908_114824.jpg" alt="Foto 3">
+  <img src="MediaWeb/IMG-20251012-WA0010(1).jpg" alt="Foto 4">
+  <video controls autoplay muted loop>
+    <source src="MediaWeb/VID-20250906-WA0220.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="meta">Tekan <strong>"Aku Sayang Kamu"</strong> 💞</div>
+<button class="btn" onclick="showPopup()">Aku Sayang Kamu 💕</button>
+
+<audio id="bgMusic" autoplay loop>
+  <source src="MediaWeb/sound.mp3" type="audio/mp3">
+</audio>
+
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <h2>Untuk Suci Aura Nuraini 💌</h2>
+    <p>
+      Aku pengen kamu tetap hidup dan terus semangat dalam menjalani hidup,
+      untuk menggapai mimpi dan cita-cita kita berdua. 🌷<br><br>
+      Stay strong and cheerful — I am always here for you 💖
+    </p>
+    <p><strong>Dengan seluruh cinta, Rifki 💕</strong></p>
+    <button class="btn" onclick="closePopup()">Tutup 💫</button>
+  </div>
+</div>
+
+<script>
+function showPopup() {
+  document.getElementById("overlay").style.display = "flex";
+}
+function closePopup() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+// efek love jatuh
+setInterval(() => {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.textContent = '💗';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 400);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
